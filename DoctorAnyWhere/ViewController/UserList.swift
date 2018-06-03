@@ -14,6 +14,7 @@ class UserList: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
     @IBOutlet weak var UserCollectionView: UICollectionView!
     @IBOutlet var userModel: UserListModel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UserCollectionView.delegate = self
@@ -43,6 +44,14 @@ class UserList: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
         configureCell(cell: cell, forRowAtIndexPath: indexPath as NSIndexPath)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == (userModel.getTotalUserCount() - 4) {
+            userModel.fetchMoreUsers {
+                self.UserCollectionView.reloadData()
+            }
+        }
     }
     
     func configureCell(cell: CollectionViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
