@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class UserList: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -46,12 +47,7 @@ class UserList: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
     
     func configureCell(cell: CollectionViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.UserName?.text = userModel.titleforItemAtIndexPath(indexPath: indexPath)
-        cell.UserImage.image = nil
-        
-        DispatchQueue.global().async {
-                cell.UserImage.image = self.userModel.loadUserImage(indexPath: indexPath)
-                cell.ActivityIndicator.isHidden = true
-        }
+        Manager.shared.loadImage(with: URL(string: userModel.getUserImageURl(indexPath: indexPath))!, into: cell.UserImage)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

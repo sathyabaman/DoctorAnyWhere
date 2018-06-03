@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,9 +51,6 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="NoN-iH-7xl">
-                                                    <rect key="frame" x="8" y="68" width="355" height="20"/>
-                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,18 +62,14 @@
                                             <constraint firstAttribute="trailing" secondItem="7bO-k8-4Ia" secondAttribute="trailing" id="7wh-Ml-j0i"/>
                                             <constraint firstAttribute="trailing" secondItem="7bO-k8-4Ia" secondAttribute="trailing" id="EEv-0W-PsD"/>
                                             <constraint firstItem="LJ4-TE-ljd" firstAttribute="leading" secondItem="sOD-RG-mIL" secondAttribute="leading" id="Fru-XL-1I6"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="NoN-iH-7xl" secondAttribute="trailing" id="JvP-Bc-5ah"/>
                                             <constraint firstItem="LJ4-TE-ljd" firstAttribute="top" secondItem="sOD-RG-mIL" secondAttribute="top" id="QLS-QZ-KQp"/>
                                             <constraint firstItem="LJ4-TE-ljd" firstAttribute="leading" secondItem="sOD-RG-mIL" secondAttribute="leading" id="Rch-XD-wpC"/>
                                             <constraint firstAttribute="bottom" secondItem="7bO-k8-4Ia" secondAttribute="bottom" constant="7" id="TTO-l3-SDf"/>
                                             <constraint firstItem="7bO-k8-4Ia" firstAttribute="leading" secondItem="sOD-RG-mIL" secondAttribute="leading" id="dG7-kh-s98"/>
                                             <constraint firstItem="7bO-k8-4Ia" firstAttribute="top" secondItem="LJ4-TE-ljd" secondAttribute="bottom" constant="3" id="f5M-Zl-alY"/>
-                                            <constraint firstItem="NoN-iH-7xl" firstAttribute="top" secondItem="sOD-RG-mIL" secondAttribute="topMargin" constant="60" id="lGg-dS-eS0"/>
                                             <constraint firstItem="7bO-k8-4Ia" firstAttribute="leading" secondItem="sOD-RG-mIL" secondAttribute="leading" id="raT-2z-w51"/>
-                                            <constraint firstItem="NoN-iH-7xl" firstAttribute="leading" secondItem="sOD-RG-mIL" secondAttribute="leadingMargin" id="sWd-BZ-3SR"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="ActivityIndicator" destination="NoN-iH-7xl" id="XXs-79-3Ug"/>
                                             <outlet property="UserImage" destination="LJ4-TE-ljd" id="ohV-Cm-KAx"/>
                                             <outlet property="UserName" destination="7bO-k8-4Ia" id="7TI-pm-Cox"/>
                                         </connections>
@@ -137,7 +129,7 @@
                                     <inset key="sectionInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserDetailCell" id="iFV-us-Ydl" customClass="UserDetailCell" customModule="CollectionViewDataSourceBlog" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserDetailCell" id="iFV-us-Ydl" customClass="UserDetailCell" customModule="DoctorAnyWhere" customModuleProvider="target">
                                         <rect key="frame" x="18" y="8" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -148,10 +140,6 @@
                                                     <rect key="frame" x="2" y="2" width="46" height="46"/>
                                                     <color key="backgroundColor" red="1" green="0.52156862749999999" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="94O-92-8CT">
-                                                    <rect key="frame" x="58" y="58" width="20" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -163,7 +151,6 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="ItemImage" destination="rer-W1-JH5" id="Fql-UP-ELl"/>
-                                            <outlet property="activityIndicator" destination="94O-92-8CT" id="NYs-3L-jed"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

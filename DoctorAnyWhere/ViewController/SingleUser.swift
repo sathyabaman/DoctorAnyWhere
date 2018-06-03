@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class SingleUser: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -28,7 +29,7 @@ class SingleUser: UIViewController, UICollectionViewDelegateFlowLayout, UICollec
         
         collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if (indexPath.row == 0) {
-            return   singleUserModel.isevenItems(totalCount: CurrentUser.items.count) ? CGSize(width: (self.view.frame.width * 0.5) - 30, height: self.view.frame.height / 4) : CGSize(width: self.view.frame.width - 50 , height: self.view.frame.height / 4)
+            return   singleUserModel.isevenItems(totalCount: CurrentUser.items.count) ? CGSize(width: (self.view.frame.width * 0.5) - 30, height: self.view.frame.height / 4) : CGSize(width: self.view.frame.width - 45 , height: self.view.frame.height / 4)
         } else {
             return CGSize(width:  (self.view.frame.width * 0.5) - 30, height: self.view.frame.height / 4)
         }
@@ -50,10 +51,7 @@ class SingleUser: UIViewController, UICollectionViewDelegateFlowLayout, UICollec
     }
     
     func configureCell(cell: UserDetailCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        DispatchQueue.global(qos: .background).async {
-            cell.ItemImage.image = self.singleUserModel.loadImage(imageUrl: self.CurrentUser.items[indexPath.row])
-            
-        }
+        Manager.shared.loadImage(with: URL(string: CurrentUser.items[indexPath.row])!, into: cell.ItemImage) 
     }
 
 

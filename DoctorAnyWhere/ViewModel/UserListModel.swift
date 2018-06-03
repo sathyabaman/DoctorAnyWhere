@@ -45,6 +45,10 @@ class UserListModel: NSObject {
         return (UserList[indexPath.row].name).replacingOccurrences(of: "-", with: " ")
     }
     
+    func getUserImageURl(indexPath: NSIndexPath) -> String {
+        return UserList[indexPath.row].image
+    }
+    
     func loadUserImage(indexPath: NSIndexPath) -> UIImage? {
         let url = URL(string: UserList[indexPath.row].image)
         let data = try? Data(contentsOf: url!)

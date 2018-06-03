@@ -7,6 +7,7 @@ target 'DoctorAnyWhere' do
 
 	pod 'SwiftyJSON'
     	pod 'Alamofire', '~> 4.5'
+	pod 'Nuke'
 
   # Pods for DoctorAnyWhere
 
